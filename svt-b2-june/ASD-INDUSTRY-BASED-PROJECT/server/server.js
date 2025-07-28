@@ -2,13 +2,13 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const connectdb = require('./config/db');
-const Dustbin = require("./models/Dustbin");
+const dustbinRoutes = require('./routes/dustbinRoutes');
 dotenv.config();
 const app = express();
 app.use(cors());
 app.use(express.json());
 connectdb();
-Dustbin();
+app.use('/api/dustbins',dustbinRoutes);
 app.get("/",(req,res)=>{
     res.json({message:"Api is working"});
 });
