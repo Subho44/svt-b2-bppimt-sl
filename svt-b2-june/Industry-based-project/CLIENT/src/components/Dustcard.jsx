@@ -1,18 +1,25 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
+import { Button, Card, Container } from 'react-bootstrap'
 
-const Dustcard = ({dustbin}) => {
-    const imageurl = `http://localhost:6500/uploads/${dustbin.image}`;
+const Dustcard = ({ dustbin, onDelete, onEdit }) => {
+  const imageurl = `http://localhost:6500/uploads/${dustbin.image}`;
   return <>
-    <Card style={{width:'18rem',margin:"1rem"}}>
-    <Card.Img src={imageurl} alt='img' style={{}}/>
-    <Card.Body>
-        <Card.Title>{dustbin.location}</Card.Title>
-        <Card.Text>{dustbin.status}</Card.Text>
-    </Card.Body>
+    <Container className='my-4'>
+      <Card style={{ width: '22rem', }}>
+        <Card.Img src={imageurl} alt='img' style={{}} />
+        <Card.Body>
+          <Card.Title>{dustbin.location}</Card.Title>
+          <Card.Text>{dustbin.status}</Card.Text>
+          <Button variant='danger' className='me-2' onClick={() => onDelete(dustbin._id)} >Delete</Button>
+
+          <Button variant='danger' onClick={() => onEdit(dustbin)}>Edit</Button>
 
 
-    </Card>
+        </Card.Body>
+
+
+      </Card>
+    </Container>
   </>
 }
 

@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const connectdb = require('./config/db');
 const dustbinRoutes = require('./routes/dustbinRoutes');
-
+const path = require('path');
 dotenv.config();
 const app = express();
 app.use(cors());

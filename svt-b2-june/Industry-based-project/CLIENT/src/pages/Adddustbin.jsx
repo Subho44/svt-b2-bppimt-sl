@@ -1,9 +1,10 @@
 import React from 'react'
+import Dustbinform from '../components/Dustbinform'
 
 const Adddustbin = () => {
-  return (
-    <div>Adddustbin</div>
-  )
+  return <>
+    <Dustbinform />
+  </>
 }
 
 export default Adddustbin
