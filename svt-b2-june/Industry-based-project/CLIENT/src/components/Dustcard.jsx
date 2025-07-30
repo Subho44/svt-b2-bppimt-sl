@@ -6,7 +6,7 @@ const Dustcard = ({ dustbin, onDelete, onEdit }) => {
   return <>
     <Container className='my-4'>
       <Card style={{ width: '22rem', }}>
-        <Card.Img src={imageurl} alt='img' style={{}} />
+        <Card.Img src={imageurl} alt='img' style={{width:"200px"}} />
         <Card.Body>
           <Card.Title>{dustbin.location}</Card.Title>
           <Card.Text>{dustbin.status}</Card.Text>

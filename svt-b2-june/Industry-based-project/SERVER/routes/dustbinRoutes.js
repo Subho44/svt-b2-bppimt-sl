@@ -7,6 +7,7 @@ const {
     deleteDustbin
 } = require('../controllers/dustbinController');
 const multer = require('multer');
+const path = require('path');
 
 //image upload
 const storage = multer.diskStorage({
@@ -20,7 +21,7 @@ const storage = multer.diskStorage({
 const upload = multer({storage:storage});
 router.get('/', getallDustbin);
 router.post('/',upload.single('image') ,createDustbin);
-router.put('/:id', updateDustbin);
+router.put('/:id', upload.single('image'), updateDustbin);
 router.delete('/:id',deleteDustbin);
 
 module.exports = router;
