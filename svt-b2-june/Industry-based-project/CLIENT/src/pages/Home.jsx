@@ -8,10 +8,11 @@ import Dustbinform from '../components/Dustbinform';
 const Home = () => {
   const [dustbins,setDustbins] = useState([]);
   const [editdustbin,setEditdustbin] = useState(null);
+  const [search,setSearch] = useState('');
 
 //all view
   const fetchdustbins = async()=>{
-    const res = await axios.get('http://localhost:6500/api/dustbins');
+    const res = await axios.get(`http://localhost:6500/api/dustbins?search=${search}`);
     setDustbins(res.data);
   }
   //delete
@@ -22,12 +23,17 @@ const Home = () => {
 
   useEffect(()=>{
    fetchdustbins();
-  },[]);
+  },[search]);
   
 
   return <>
     <Container>
       <h2 className='my-4'>All Dustbins</h2>
+      <input
+        placeholder='search by name....'
+        value={search}
+        onChange={e=>setSearch(e.target.value)}
+      />
       <Row>
         
           {dustbins.map(x=>(

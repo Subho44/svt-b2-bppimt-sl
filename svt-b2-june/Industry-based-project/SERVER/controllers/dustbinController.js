@@ -10,7 +10,9 @@ exports.createDustbin = async(req,res)=>{
 }
 //view all data
 exports.getallDustbin = async(req,res)=>{
-    const datas = await Dustbin.find();
+    const {search} = req.query;
+    const query = search ? {location:{$regex:search, $options:'i'}}: {};
+    const datas = await Dustbin.find(query);
     res.status(201).json(datas);
 }
 //update all data
