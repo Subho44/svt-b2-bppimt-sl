@@ -14,7 +14,8 @@ exports.getallDustbin = async(req,res)=>{
     const query = search ? {
         $or:[
        { location:{$regex:search, $options:'i'}},
-       { status:{$regex:search, $options:'i'}},
+       { status
+        :{$regex:search, $options:'i'}},
 
    ]}: {};
     const datas = await Dustbin.find(query);
