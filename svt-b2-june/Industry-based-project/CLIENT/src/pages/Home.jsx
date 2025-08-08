@@ -5,6 +5,7 @@ import { Container,Row,Col } from 'react-bootstrap';
 import Dustcard from '../components/Dustcard';
 import Dustbinform from '../components/Dustbinform';
 
+
 const Home = () => {
   const [dustbins,setDustbins] = useState([]);
   const [editdustbin,setEditdustbin] = useState(null);
@@ -46,6 +47,7 @@ const Home = () => {
           ))}
         
       </Row>
+      
       {editdustbin && <Dustbinform dustbinEdit={editdustbin} refreshdustbins={fetchdustbins}/>}
     </Container>
   </>

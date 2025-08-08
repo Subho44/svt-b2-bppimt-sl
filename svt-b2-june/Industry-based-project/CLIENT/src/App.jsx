@@ -6,6 +6,7 @@ import Adddustbin from './pages/Adddustbin'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import Privateroute from './utils/Privateroute'
+import Dashboard from './pages/Dashboard'
 
 const App = () => {
 
@@ -18,6 +19,7 @@ const App = () => {
       <Route element={<Privateroute/>}>
       <Route path='/home' element={<Home/>}></Route>
       <Route path='/add' element={<Adddustbin/>}></Route>
+      <Route path='/dashboard' element={<Dashboard/>}></Route>
       </Route>
     </Routes>
   </BrowserRouter>

@@ -5,16 +5,23 @@ import About from './components/About'
 import Contact from './components/Contact'
 import Service from './components/Service'
 import Navbar from './components/Navbar'
+import Register from './components/Register'
+import Login from './components/Login'
+import Privateroute from './utils/Privateroute'
 const App = () => {
 
   return <>
   <BrowserRouter>
   <Navbar/>
     <Routes>
-      <Route path='/' element={<Home/>}></Route>
+      <Route path='/' element={<Register/>}/>
+      <Route path='/login' element={<Login/>}/>
+      <Route element={<Privateroute/>}>
+      <Route path='/home' element={<Home/>}></Route>
        <Route path='/about' element={<About name="raj"/>}></Route>
         <Route path='/contact' element={<Contact/>}></Route>
          <Route path='/service' element={<Service/>}></Route>
+         </Route>
     </Routes>
   </BrowserRouter>
 

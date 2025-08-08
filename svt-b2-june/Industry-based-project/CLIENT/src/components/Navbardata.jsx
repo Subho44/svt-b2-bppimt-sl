@@ -21,6 +21,7 @@ const Navbardata = () => {
               <>
                 <Nav.Link as={Link} to="/home">Home</Nav.Link>
                 <Nav.Link as={Link} to="/add">Add Dustbin</Nav.Link>
+                <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
                 <Button onClick={hlogout}>Logout</Button>
               </>
             )
