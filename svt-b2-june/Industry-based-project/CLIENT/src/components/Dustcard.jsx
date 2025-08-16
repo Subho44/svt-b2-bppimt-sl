@@ -19,7 +19,7 @@ const Dustcard = ({ dustbin, onDelete, onEdit }) => {
     const price = getPriceByLocation(dustbin.location) * 100; // in paisa for Razorpay
 
     const options = {
-      key: "rzp_test_xEWdAnsz4jtFW5", // Razorpay test key
+      key: "rzp_test_R5tRGCqVmfzdxD", // Razorpay test key
       amount: price,
       currency: "INR",
       name: "Dustbin Booking",
